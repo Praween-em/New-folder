@@ -1,16 +1,20 @@
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import React from "react"
+import { cn } from "@/pages/lib/utils"
+
 
 const categories = [
-  "Apartments",
   "Houses",
-  "PG/Hostel",
+  "Apartments",
+  "Rooms",
+  "Flats",
+  "PG / Hostels",
   "Office Space",
+  "Studio Space",
   "Shops",
-  "Warehouses",
+  "Warehouses / Godowns",
   "Farm Lands",
   "Commercial Buildings",
+  "AD Space"
 ]
 
 export function CategoryBar({
@@ -22,7 +26,7 @@ export function CategoryBar({
 }) {
   return (
     <div className="w-full overflow-x-auto scrollbar-hide py-2">
-      <div className="flex space-x-2 min-w-max px-2">
+      <div className="flex space-x-3 min-w-max px-0">
         {categories.map((category) => (
           <Button
             key={category}

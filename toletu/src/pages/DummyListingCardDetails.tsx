@@ -1,7 +1,7 @@
-import React from "react"
+
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+
 
 const images = [
   "/images/sample1.jpg",
@@ -22,13 +22,13 @@ export default function DummyListingCardDetails() {
       </div>
 
       {/* Main Listing Content */}
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-4 space-y-4 relative z-0">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-4 space-y-4 relative z-">
         {/* Back Arrow */}
         <button
           className="absolute -top-2 -left-2 p-2 bg-white rounded-full shadow hover:bg-gray-100"
           onClick={() => navigate(-1)}
         >
-          <ArrowLeft className="h-5 w-5 text-gray-700" />
+          
         </button>
 
         {/* Title */}

@@ -1,14 +1,16 @@
+// src/App.tsx
 import { useInitUserSettings } from './hooks/useInitUserSettings'
-import './App.css'
 import { AppRouter } from '@/routes/AppRouter'
+import { Toaster } from "@/components/ui/sonner"
 
 function App() {
-  useInitUserSettings() // <- valid hook usage here
-  console.log('App component mounted') // debug
+  useInitUserSettings()
+  console.log('[App] Component mounted')
 
   return (
     <>
       <AppRouter />
+      <Toaster />
     </>
   )
 }

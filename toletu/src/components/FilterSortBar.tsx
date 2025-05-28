@@ -2,7 +2,7 @@ import * as React from "react"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useLocationStore } from "@/store/useLocationStore"
-import { cn } from "@/lib/utils"
+import { cn } from "@/pages/lib/utils"
 
 // Dummy areas mapped by city
 const areaMap: Record<string, string[]> = {
@@ -26,8 +26,8 @@ const areaMap: Record<string, string[]> = {
 
 const sortOptions = [
   { label: "Date: Newest first", value: "newest" },
-  { label: "Price: Low to High", value: "priceLow" },
-  { label: "Price: High to Low", value: "priceHigh" },
+  { label: "Price: Low - High", value: "priceLow" },
+  { label: "Price: High - Low", value: "priceHigh" },
 ]
 
 export function FilterSortBar() {
@@ -38,13 +38,13 @@ export function FilterSortBar() {
   const areaOptions = selectedLocation ? areaMap[selectedLocation] || [] : []
 
   return (
-    <div className="flex flex-row sm:flex-row items-center gap-2 w-full px-2 py-2 bg-white border-b shadow-md">
+    <div className="flex flex-row sm:flex-row items-center gap-2 w-full px-1 py-2 bg-white border-b shadow-md">
       {/* Sort by */}
       <div className="flex flex-col w-full sm:w-1/2">
-        <Label htmlFor="sort" className="mb-1 text-sm font-medium text-gray-700">Sort by</Label>
+        
         <Select value={selectedSort} onValueChange={setSelectedSort}>
           <SelectTrigger id="sort" className="w-full">
-            <SelectValue placeholder="Select sort option" />
+            <SelectValue placeholder="Sort By" />
           </SelectTrigger>
           <SelectContent>
             {sortOptions.map((option) => (
@@ -58,8 +58,7 @@ export function FilterSortBar() {
 
       {/* Select Area */}
       <div className="flex flex-col w-full sm:w-1/2">
-        <Label htmlFor="area" className="mb-1 text-sm font-medium text-gray-700">Select Area</Label>
-        <Select value={selectedArea} onValueChange={setSelectedArea} disabled={areaOptions.length === 0}>
+        <Select value={selectedArea} onValueChange={setSelectedArea} disabled={areaOptions.length <= 1 }>
           <SelectTrigger id="area" className="w-full">
             <SelectValue placeholder={areaOptions.length ? "Choose area" : "Select area"} />
           </SelectTrigger>

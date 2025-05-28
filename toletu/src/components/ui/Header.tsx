@@ -6,15 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Bell } from "lucide-react"
 import { useLocationStore } from "@/store/useLocationStore"
 import { useNotificationStore } from "@/store/useNotificationStore"
-import { fetchNotifications, performSearch } from "@/lib/api"
-import { getFromCache, setInCache } from "@/lib/redis"
+import { fetchNotifications, performSearch } from "@/pages/lib/api"
+import { getFromCache, setInCache } from "@/pages/lib/redis"
 
 const cities = [
-  'Amaravati', 'Anantapur', 'Bapatla', 'Chittoor', 'Dr. B.R. Ambedkar Konaseema',
-  'East Godavari', 'Eluru', 'Guntur', 'Kadapa', 'Kakinada', 'Krishna', 'Kurnool',
-  'Manyam', 'Nandyal', 'Nellore', 'NTR', 'Palnadu', 'Parvathipuram', 'Prakasam',
-  'Rajahmundry', 'Rajampet', 'Srikakulam', 'Tirupati', 'Visakhapatnam',
-  'Vizianagaram', 'West Godavari'
+  'Amaravati', 'Anantapur','Chittoor', 
+   'Guntur', 'Kadapa', 'Kakinada', 'Krishna', 'Kurnool',
+   'Nandyal', 'Nellore', 'Vijayawada', 
+  'Rajahmundry', 'Srikakulam', 'Tirupati', 'Visakhapatnam',
 ].sort()
 
 export function Header() {
@@ -39,12 +38,12 @@ export function Header() {
   }
 
   return (
-    <header className="w-full p-4 flex flex-col gap-2 bg-white shadow-md">
+    <header className="w-full p-2 flex flex-col gap-2 bg-white shadow-s">
       <div className="flex items-center justify-between gap-2">
         <div className="text-blue-400 text-4xl font-bold">Toletu</div>
         <div className="flex items-center ">
           <Select onValueChange={setSelectedLocation} value={selectedLocation}>
-            <SelectTrigger className="w-[150px]">
+            <SelectTrigger className="w-[125px]">
               <SelectValue placeholder="Select location" />
             </SelectTrigger>
             <SelectContent>

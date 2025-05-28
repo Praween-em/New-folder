@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
-import { getListingById } from "@/lib/api"
+import { getListingById } from "@/pages/lib/api"
 
 export default function ListingDetailsPage() {
   const { id } = useParams()

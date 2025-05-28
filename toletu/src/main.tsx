@@ -1,13 +1,11 @@
-// main.tsx
+// src/main.tsx
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "@/index.css"
-import { AppRouter } from "@/routes/AppRouter"
-import { Toaster } from "@/components/ui/sonner"
+import App from "@/App"  // <-- Correct: use App.tsx
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <AppRouter />   {/* Already handles routing */}
-    <Toaster />
+    <App />   {/* Contains AppRouter + useInitUserSettings */}
   </React.StrictMode>
 )
